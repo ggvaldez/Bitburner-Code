@@ -8,7 +8,10 @@ Well, I just completed XXXXX with some late game scripts that were made after a 
   <summary>Spoilers</summary>
 
   ```
-Well, I just completed the first node some late game scripts that were made after a lot of iterations, but I don't feel are good enough I also stupidly chose Node 9 - Hacktocracy, but I'm too stubborn to go back now. So, I have some "free" time (I actually should be studying for an exam, but shhh...) as this node takes ages to get going so far...
+Well, I just completed the first node some late game scripts that were made after a lot of iterations,
+but I don't feel are good enough I also stupidly chose Node 9 - Hacktocracy, but I'm too stubborn
+to go back now. So, I have some "free" time (I actually should be studying for an exam, but shhh...)
+as this node takes ages to get going so far...
   ```
 </details>
 
