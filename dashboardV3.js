@@ -1,6 +1,6 @@
 //TODO: FULL RE-WRITE THIS MESS
 
-/** @param {NS} ns */
+/** @type import(".").NS */
 var ns
 const colorCyan = "\x1b[36m"
 const colorYellow = "\x1b[33m"

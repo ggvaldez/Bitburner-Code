@@ -1,4 +1,4 @@
-/** @param {NS} ns */
+/** @type import(".").NS */
 var ns = null
 
 var hacklimit = 0.1 // max % of missing money 
