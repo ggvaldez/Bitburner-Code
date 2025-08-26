@@ -9,7 +9,7 @@ var nr_runs = 1
 var sleepTime = 10500
 var hackLimit = 0.4
 var endIt = false
-
+var maxSecDiff = 0
 async function generateServerMap() {
   await ns.exec("/" + "generateServerMapFile.js", "home")
   await ns.sleep(100)
@@ -133,7 +133,7 @@ export async function main(ns2) {
       //ns.tprint(hostname +  serverTime[hostname])
 
       if (data.maxMoney != 0 && data.hackLevel <= obj.serverInfo.playerHackLevel) {
-        if (data.availableMoney < data.maxMoney && serverTime['G'][hostname] < 1) {
+        if (data.availableMoney < data.maxMoney && data.secDiff <= maxSecDiff && serverTime['G'][hostname] < 1) {
           var growObj = {
             hostname: hostname,
             threads: Math.ceil(ns.growthAnalyze(hostname, data.maxMoney / Math.max(1, data.availableMoney))),
@@ -152,7 +152,7 @@ export async function main(ns2) {
           threadToRunList.push(secObj)
         } //else
 
-      if (data.secDiff < 5 && data.availableMoney > (1 - hackLimit) * data.maxMoney && serverTime['H'][hostname] < 1) {
+      if (data.secDiff <= maxSecDiff && data.availableMoney > (1 - hackLimit) * data.maxMoney && serverTime['H'][hostname] < 1) {
         var totThreads = Math.ceil((1 / ns.hackAnalyze(hostname)) * hackLimit)
         var maxselfThreads = Math.min(Math.floor(data.availableRam / threadSize),totThreads)
         if (maxselfThreads > 0) ns.exec("/lib/" + "hackThread.js", hostname, maxselfThreads, hostname)
