@@ -1,6 +1,4 @@
-/** @param {NS} ns */
-/** @param {NS} ns */
-// @ignore infinite
+/** @type import(".").NS */
 var ns = null;
 var threadSize = 2;
 var defaultGrowRatio = 0.45;
