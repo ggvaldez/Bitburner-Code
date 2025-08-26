@@ -3,12 +3,14 @@ export async function main(ns) {
   var minprice
   var hn = ns.hacknet
   //var upMax = 100
-  //while (hn.spendHashes("Improve Studying")) {
+
   var sellMax = 10000
-  while (hn.spendHashes("Sell for Money") && sellMax > 0) {
-    sellMax--;
-    await ns.sleep(100)
-  }
+  //if (hn.spendHashes("Improve Studying")) {
+  //  await ns.sleep(8000)
+    while (hn.spendHashes("Sell for Money") ) {
+      //await ns.sleep(100)
+    }
+  //}
   var buy
   if (true) {
     do {
@@ -43,7 +45,7 @@ export async function main(ns) {
         buy.cost = hn.getPurchaseNodeCost()
       }
       //ns.tprint(buy)
-      if (buy.cost < ns.getPlayer().money) {
+      if (buy.cost * 10 < ns.getPlayer().money) {
         switch (buy.type) {
           case "Level": hn.upgradeLevel(buy.node);
           case "Cache": hn.upgradeCache(buy.node);
@@ -55,7 +57,7 @@ export async function main(ns) {
       //await ns.sleep(100)
       // ns.tprint("buycost: ", buy.cost, " buy.type:", buy.type, " player max monies: ", ns.getPlayer().money)
       //}
-    } while (buy.cost < ns.getPlayer().money)// && upMax > 0)
+    } while (buy.cost * 10 < ns.getPlayer().money)// && upMax > 0)
 
   }
 }

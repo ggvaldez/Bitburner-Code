@@ -2696,6 +2696,13 @@
       "description": "You are given the following array of stock prices (which are numbers) where the i-th element represents the stock price on day i:\n\n 83,129,149,100,164,137,16,63,187,70,55,85,34,175,11,7,48,124,52,63,165,95,11,120,9,92,188,123,177,34\n\n Determine the maximum possible profit you can earn using at most two transactions. A transaction is defined as buying and then selling one share of the stock. Note that you cannot engage in multiple transactions at once. In other words, you must sell the stock before you buy it again.\n\n If no profit can be made, then the answer should be 0."
     },
     {
+      "host": "snap-fitness",
+      "file": "contract-331838.cct",
+      "type": "Square Root",
+      "data": "86215192234057799348862844310583605474165449521372861792468745366074016219238518244808296646429034249253720663873183789302467171445864398329246648506598282759719795853760183158120281308881759323663547",
+      "description": "You are given a ~200 digit BigInt. Find the square root of this number, to the nearest integer.\n\nThe input is a BigInt value. The answer must be the string representing the solution's BigInt value. The trailing \"n\" is not part of the string.\n\nHint: If you are having trouble, you might consult https://en.wikipedia.org/wiki/Methods_of_computing_square_roots\n\nInput number:\n86215192234057799348862844310583605474165449521372861792468745366074016219238518244808296646429034249253720663873183789302467171445864398329246648506598282759719795853760183158120281308881759323663547"
+    },
+    {
       "host": "deltaone",
       "file": "contract-295274.cct",
       "type": "Algorithmic Stock Trader I",
@@ -2805,6 +2812,44 @@
       "description": "Lempel-Ziv (LZ) compression is a data compression technique which encodes data using references to earlier parts of the data. In this variant of LZ, data is encoded in two types of chunk. Each chunk begins with a length L, encoded as a single ASCII digit from 1 to 9, followed by the chunk data, which is either:\n\n 1. Exactly L characters, which are to be copied directly into the uncompressed data.\n 2. A reference to an earlier part of the uncompressed data. To do this, the length is followed by a second ASCII digit X: each of the L output characters is a copy of the character X places before it in the uncompressed data.\n\n For both chunk types, a length of 0 instead means the chunk ends immediately, and the next character is the start of a new chunk. The two chunk types alternate, starting with type 1, and the final chunk may be of either type.\n\n You are given the following input string:\n     bv7w4v7w46av4v7w46alDpalDppppppppx3H8TV8ppx3Hh8ppx3Hh8m5kh0y6y5kh\n Encode it using Lempel-Ziv encoding with the minimum possible output length.\n\n Examples (some have other possible encodings of minimal length):\n     abracadabra     ->  7abracad47\n     mississippi     ->  4miss433ppi\n     aAAaAAaAaAA     ->  3aAA53035\n     2718281828      ->  627182844\n     abcdefghijk     ->  9abcdefghi02jk\n     aaaaaaaaaaaa    ->  3aaa91\n     aaaaaaaaaaaaa   ->  1a91031\n     aaaaaaaaaaaaaa  ->  1a91041"
     },
     {
+      "host": "zb-institute",
+      "file": "contract-351680.cct",
+      "type": "Merge Overlapping Intervals",
+      "data": [
+        [
+          15,
+          19
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          18,
+          26
+        ]
+      ],
+      "description": "Given the following array of arrays of numbers representing a list of intervals, merge all overlapping intervals.\n\n [[15,19],[6,7],[18,26]]\n\n Example:\n\n [[1, 3], [8, 10], [2, 6], [10, 16]]\n\n would merge into [[1, 6], [8, 16]].\n\n The intervals must be returned in ASCENDING order. You can assume that in an interval, the first number will always be smaller than the second."
+    },
+    {
+      "host": "aevum-police",
+      "file": "contract-232714-Sector12.cct",
+      "type": "Array Jumping Game",
+      "data": [
+        8,
+        0,
+        5,
+        0,
+        10,
+        0,
+        0,
+        0,
+        7,
+        0
+      ],
+      "description": "You are given the following array of integers:\n\n 8,0,5,0,10,0,0,0,7,0\n\n Each element in the array represents your MAXIMUM jump length at that position. This means that if you are at position i and your maximum jump length is n, you can jump to any position from i to i+n. \n\nAssuming you are initially positioned at the start of the array, determine whether you are able to reach the last index.\n\n Your answer should be submitted as 1 or 0, representing true and false respectively."
+    },
+    {
       "host": "global-pharm",
       "file": "contract-720890.cct",
       "type": "Sanitize Parentheses in Expression",
@@ -2831,6 +2876,13 @@
       "type": "Compression II: LZ Decompression",
       "data": "9rEggsDFlI06awgJTZ723gCB3775TZ5pYP5846Bfe419o7m6M0yff680835S4l6i59",
       "description": "Lempel-Ziv (LZ) compression is a data compression technique which encodes data using references to earlier parts of the data. In this variant of LZ, data is encoded in two types of chunk. Each chunk begins with a length L, encoded as a single ASCII digit from 1 to 9, followed by the chunk data, which is either:\n\n 1. Exactly L characters, which are to be copied directly into the uncompressed data.\n 2. A reference to an earlier part of the uncompressed data. To do this, the length is followed by a second ASCII digit X: each of the L output characters is a copy of the character X places before it in the uncompressed data.\n\n For both chunk types, a length of 0 instead means the chunk ends immediately, and the next character is the start of a new chunk. The two chunk types alternate, starting with type 1, and the final chunk may be of either type.\n\n You are given the following LZ-encoded string:\n     9rEggsDFlI06awgJTZ723gCB3775TZ5pYP5846Bfe419o7m6M0yff680835S4l6i59\n Decode it and output the original string.\n\n Example: decoding '5aaabb450723abb' chunk-by-chunk\n\n     5aaabb           ->  aaabb\n     5aaabb45         ->  aaabbaaab\n     5aaabb450        ->  aaabbaaab\n     5aaabb45072      ->  aaabbaaababababa\n     5aaabb450723abb  ->  aaabbaaababababaabb"
+    },
+    {
+      "host": "applied-energetics",
+      "file": "contract-657111-CyberSec.cct",
+      "type": "Compression II: LZ Decompression",
+      "data": "9lXOK8CLLm02Di744Ojte549Ps4fizJB603qOl265xuTLD796FuwDHQ245QtaaX",
+      "description": "Lempel-Ziv (LZ) compression is a data compression technique which encodes data using references to earlier parts of the data. In this variant of LZ, data is encoded in two types of chunk. Each chunk begins with a length L, encoded as a single ASCII digit from 1 to 9, followed by the chunk data, which is either:\n\n 1. Exactly L characters, which are to be copied directly into the uncompressed data.\n 2. A reference to an earlier part of the uncompressed data. To do this, the length is followed by a second ASCII digit X: each of the L output characters is a copy of the character X places before it in the uncompressed data.\n\n For both chunk types, a length of 0 instead means the chunk ends immediately, and the next character is the start of a new chunk. The two chunk types alternate, starting with type 1, and the final chunk may be of either type.\n\n You are given the following LZ-encoded string:\n     9lXOK8CLLm02Di744Ojte549Ps4fizJB603qOl265xuTLD796FuwDHQ245QtaaX\n Decode it and output the original string.\n\n Example: decoding '5aaabb450723abb' chunk-by-chunk\n\n     5aaabb           ->  aaabb\n     5aaabb45         ->  aaabbaaab\n     5aaabb450        ->  aaabbaaab\n     5aaabb45072      ->  aaabbaaababababa\n     5aaabb450723abb  ->  aaabbaaababababaabb"
     },
     {
       "host": "vitalife",
@@ -2872,61 +2924,11 @@
       "description": "You are given the following array of stock prices (which are numbers) where the i-th element represents the stock price on day i:\n\n 127,103,38,3,183,121,155,106,140,102,77,114,35,109,94,95,145,188,142,10,41,26,107,38,194,22,112,174,77,132,136\n\n Determine the maximum possible profit you can earn using at most two transactions. A transaction is defined as buying and then selling one share of the stock. Note that you cannot engage in multiple transactions at once. In other words, you must sell the stock before you buy it again.\n\n If no profit can be made, then the answer should be 0."
     },
     {
-      "host": "megacorp",
-      "file": "contract-776777-JoesGuns.cct",
-      "type": "Unique Paths in a Grid II",
-      "data": [
-        [
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      ],
-      "description": "You are located in the top-left corner of the following grid:\n\n 0,0,0,1,0,\n0,0,0,0,0,\n0,1,1,0,0,\n0,0,0,0,0,\n0,0,0,0,0,\n0,0,0,0,0,\n0,0,0,0,0,\n\n You are trying reach the bottom-right corner of the grid, but you can only move down or right on each step. Furthermore, there are obstacles on the grid that you cannot move onto. These obstacles are denoted by '1', while empty spaces are denoted by 0.\n\n Determine how many unique paths there are from start to finish.\n\n NOTE: The data returned for this contract is an 2D array of numbers representing the grid."
+      "host": "nwo",
+      "file": "contract-843623-Netburners.cct",
+      "type": "Compression I: RLE Compression",
+      "data": "eeeeeeeeeZNNNNNNNNNNNJP3pnBnn17ttvvVVnnYYYYYY00aaaaaakwwzzhhwwJJRRRRRRR",
+      "description": "Run-length encoding (RLE) is a data compression technique which encodes data as a series of runs of a repeated single character. Runs are encoded as a length, followed by the character itself. Lengths are encoded as a single ASCII digit; runs of 10 characters or more are encoded by splitting them into multiple runs.\n\n You are given the following input string:\n     eeeeeeeeeZNNNNNNNNNNNJP3pnBnn17ttvvVVnnYYYYYY00aaaaaakwwzzhhwwJJRRRRRRR\n Encode it using run-length encoding with the minimum possible output length.\n\n Examples:\n\n     aaaaabccc            ->  5a1b3c\n     aAaAaA               ->  1a1A1a1A1a1A\n     111112333            ->  511233\n     zzzzzzzzzzzzzzzzzzz  ->  9z9z1z  (or 9z8z2z, etc.)"
     },
     {
       "host": "titan-labs",
@@ -2934,6 +2936,13 @@
       "type": "Generate IP Addresses",
       "data": "19224033206",
       "description": "Given the following string containing only digits, return an array with all possible valid IP address combinations that can be created from the string:\n\n 19224033206\n\n Note that an octet cannot begin with a '0' unless the number itself is exactly '0'. For example, '192.168.010.1' is not a valid IP.\n\n Examples:\n\n 25525511135 -> [\"255.255.11.135\", \"255.255.111.35\"]\n 1938718066 -> [\"193.87.180.66\"]"
+    },
+    {
+      "host": "titan-labs",
+      "file": "contract-826615.cct",
+      "type": "Total Ways to Sum",
+      "data": 22,
+      "description": "It is possible write four as a sum in exactly four different ways:\n\n     3 + 1\n     2 + 2\n     2 + 1 + 1\n     1 + 1 + 1 + 1\n\n How many different distinct ways can the number 22 be written as a sum of at least two positive integers?"
     }
   ]
 }

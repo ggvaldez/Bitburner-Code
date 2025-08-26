@@ -184,7 +184,7 @@ export async function main(ns2) {
     }
     var runThread = undefined
     for ([hostname, data] of Object.entries(obj.serverMap)) {
-      if(!hostname.includes("hacknet-server")){
+      if(true){//if(!hostname.includes("hacknet-server")){
         var avoid_loop = 10000
       while (avoid_loop > 0) {
         if(avoid_loop < 3){
