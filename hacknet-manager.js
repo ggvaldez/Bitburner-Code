@@ -5,14 +5,16 @@ export async function main(ns) {
   //var upMax = 100
 
   var sellMax = 10000
-  //if (hn.spendHashes("Improve Studying")) {
+ // if (hn.spendHashes("Improve Studying")) {
+// if (hn.spendHashes("Improve Gym Training")) {
+ 
   //  await ns.sleep(8000)
-    while (hn.spendHashes("Sell for Money") ) {
+    while ( hn.spendHashes("Sell for Money") ) {
       //await ns.sleep(100)
     }
-  //}
+ // }
   var buy
-  if (true) {
+  if (false) {
     do {
       //upMax++
       buy = { type: "Node", node: 0, cost: Number.MAX_SAFE_INTEGER }
@@ -45,7 +47,7 @@ export async function main(ns) {
         buy.cost = hn.getPurchaseNodeCost()
       }
       //ns.tprint(buy)
-      if (buy.cost * 10 < ns.getPlayer().money) {
+      if (buy.cost * 1 < ns.getPlayer().money) {
         switch (buy.type) {
           case "Level": hn.upgradeLevel(buy.node);
           case "Cache": hn.upgradeCache(buy.node);
@@ -57,7 +59,7 @@ export async function main(ns) {
       //await ns.sleep(100)
       // ns.tprint("buycost: ", buy.cost, " buy.type:", buy.type, " player max monies: ", ns.getPlayer().money)
       //}
-    } while (buy.cost * 10 < ns.getPlayer().money)// && upMax > 0)
+    } while (buy.cost * 1 < ns.getPlayer().money)// && upMax > 0)
 
   }
 }

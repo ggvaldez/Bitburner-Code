@@ -9,7 +9,7 @@ var nr_runs = 1
 var sleepTime = 10500
 var hackLimit = 0.4
 var endIt = false
-var maxSecDiff = 0
+var maxSecDiff = 5
 async function generateServerMap() {
   await ns.exec("/" + "generateServerMapFile.js", "home")
   await ns.sleep(100)
@@ -66,7 +66,7 @@ export async function main(ns2) {
   var first_loop = 1;
 
   while (true) {
-    ns.exec("hacknet-manager.js","home")
+   // ns.exec("hacknet-manager.js","home")
     if (!endIt) {
       var myservers = ns.getPurchasedServers()
       var max_server_size = 0

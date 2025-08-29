@@ -16,62 +16,55 @@ function getRoot(hostname) {
   //  return;
   //}
   var openPorts = 0;
-  var hackFiles = [
-    { file: "BruteSSH.exe", cost: 1500000 },
-    { file: "FTPCrack.exe", cost: 1500000 },
-    { file: "RelaySMTP.exe", cost: 5000000 },
-    { file: "HTTPWorm.exe", cost: 30000000 },
-    { file: "SQLInject.exe", cost: 250000000 }]
-  for (const obj of hackFiles) {
-    if (!ns.fileExists(obj.file) && ns.getPlayer().money > obj.cost) {
-      // ns.run("buy.js",1,obj.file)
 
 
-      if (ns.fileExists("brutessh.exe") && ns.brutessh(hostname)) {
-        // ns.tprint("BruteSSH Port Open!");
-        openPorts += 1;
-      } else if (ns.getPlayer().money > 1500000 && !ns.hasRootAccess(hostname)&& ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
-        ns.tprint("ERROR: MISSING " + "BruteSSH.exe for " + hostname)
-      }
-      if (ns.fileExists("ftpcrack.exe") && ns.ftpcrack(hostname)) {
-        //  ns.tprint("FTPCrack Port Open!")
-        openPorts += 1;
-      } else if (ns.getPlayer().money > 1500000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
-        ns.tprint("ERROR: MISSING " + "FTPCrack.exe for " + hostname)
-      }
-      if (ns.fileExists("relaysmtp.exe") && ns.relaysmtp(hostname)) {
-        // ns.tprint("RelaySMTP Port Open!")
-        openPorts += 1;
-      } else if (ns.getPlayer().money > 5000000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
-        ns.tprint("ERROR: MISSING " + "RelaySMTP.exe for " + hostname)
-      }
-      if (ns.fileExists("httpworm.exe") && ns.httpworm(hostname)) {
-        //  ns.tprint("HTTPWorm Port Open!")
-        openPorts += 1;
-      } else if (ns.getPlayer().money > 30000000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
-        ns.tprint("ERROR: MISSING " + "HTTPWorm.exe for " + hostname)
-      }
-      if (ns.fileExists("sqlinject.exe") && ns.sqlinject(hostname)) {
-        //  ns.tprint("SQLInject Port Open!")
-        openPorts += 1;
-      } else if (ns.getPlayer().money > 250000000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
-        ns.tprint("ERROR: MISSING " + "SQLInject.exe for " + hostname)
-      }
+
+    if (ns.fileExists("brutessh.exe") && ns.brutessh(hostname)) {
+      // ns.tprint("BruteSSH Port Open!");
+      openPorts += 1;
+    } else if (ns.getPlayer().money > 1500000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
+      ns.tprint("ERROR: MISSING " + "BruteSSH.exe for " + hostname)
     }
-      //  ns.tprint("Starting Hack!");
-      if (ns.getServerNumPortsRequired(hostname) <= openPorts && ns.nuke(hostname)) {
-        //if (ns.getServerNumPortsRequired(hostname) <= 0 && ns.nuke(hostname)) {
-        // ns.tprint("Nuke Successful!!");
-      } else {
-        //  ns.tprint("Nuke Failed - Ports Required: " + ns.getServerNumPortsRequired(hostname));
-      }
-      if (ns.scp(["/lib/secThread.js", "/lib/growThread.js", "/lib/hackThread.js", "/lib/shareThread.js"], hostname, "home")) {
-        // ns.tprint("Hack Installed!");
-      } else {
-        // ns.tprint("Hack not copied");
-      }
+    if (ns.fileExists("ftpcrack.exe") && ns.ftpcrack(hostname)) {
+      //  ns.tprint("FTPCrack Port Open!")
+      openPorts += 1;
+    } else if (ns.getPlayer().money > 1500000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
+      ns.tprint("ERROR: MISSING " + "FTPCrack.exe for " + hostname)
+    }
+    if (ns.fileExists("relaysmtp.exe") && ns.relaysmtp(hostname)) {
+      // ns.tprint("RelaySMTP Port Open!")
+      openPorts += 1;
+    } else if (ns.getPlayer().money > 5000000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
+      ns.tprint("ERROR: MISSING " + "RelaySMTP.exe for " + hostname)
+    }
+    if (ns.fileExists("httpworm.exe") && ns.httpworm(hostname)) {
+      //  ns.tprint("HTTPWorm Port Open!")
+      openPorts += 1;
+    } else if (ns.getPlayer().money > 30000000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
+      ns.tprint("ERROR: MISSING " + "HTTPWorm.exe for " + hostname)
+    }
+    if (ns.fileExists("sqlinject.exe") && ns.sqlinject(hostname)) {
+      //  ns.tprint("SQLInject Port Open!")
+      openPorts += 1;
+    } else if (ns.getPlayer().money > 250000000 && !ns.hasRootAccess(hostname) && ns.getServerRequiredHackingLevel(hostname) <= ns.getHackingLevel()) {
+      ns.tprint("ERROR: MISSING " + "SQLInject.exe for " + hostname)
+    }
+  
+  //  ns.tprint("Starting Hack!");
+  if (ns.getServerNumPortsRequired(hostname) <= openPorts && ns.nuke(hostname)) {
+    //if (ns.getServerNumPortsRequired(hostname) <= 0 && ns.nuke(hostname)) {
+    // ns.tprint("Nuke Successful!!");
+  } else {
     
+    //  ns.tprint("Nuke Failed - Ports Required: " + ns.getServerNumPortsRequired(hostname));
   }
+  if (ns.scp(["/lib/secThread.js", "/lib/growThread.js", "/lib/hackThread.js", "/lib/shareThread.js"], hostname, "home")) {
+    // ns.tprint("Hack Installed!");
+  } else {
+    // ns.tprint("Hack not copied");
+  }
+
+
 }
 
 export async function main(ns2) {
@@ -89,7 +82,7 @@ export async function main(ns2) {
     playerHackLevel: 0
   };
   basicData.playerHackLevel = ns.getHackingLevel();
-  
+
   while (index < serverlist.length - 1) {
     index = index + 1;
     var hostname = serverlist[index];
@@ -98,7 +91,7 @@ export async function main(ns2) {
     if (!ns.hasRootAccess(hostname)) {
       continue;
     }
-    if (true){//ns.getServerRequiredHackingLevel(hostname) <= player_hack_level) {
+    if (true) {//ns.getServerRequiredHackingLevel(hostname) <= player_hack_level) {
       var data = {
         maxMoney: Math.round(ns.getServerMaxMoney(hostname)),
         availableMoney: Math.round(ns.getServerMoneyAvailable(hostname)),
